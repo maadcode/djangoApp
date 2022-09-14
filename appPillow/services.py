@@ -136,21 +136,9 @@ def nivelgrises(url):
     return tobase64(imagen)
 
 def tobase64(imagen):
-    imagen.show()
     imagen.save("temp.jpg")
     with open("temp.jpg", "rb") as img_file:
         b64 = base64.b64encode(img_file.read())
     result=b64.decode('utf-8')
     print(result)
     return result
-
-# def convertir(imagen):
-#     data=np.asarray(imagen)
-#     img=Image.fromarray(data).convert("L")
-#     return img
-
-if __name__ == '__main__':
-    nivelgrises("Imagen.jpg")
-
-    
-  
