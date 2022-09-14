@@ -18,7 +18,9 @@ body {
 .buttons {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     padding: 2rem;
 }
 
@@ -31,13 +33,50 @@ body {
 
 .buttons button,
 .images input[type="file"] {
-    padding: 1.2rem;
+    padding: 1rem;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1rem;
     overflow: none;
 }
 
 .image {
-    border: 3px solid green;
+    border: 3px solid #fff;
     height: 80%;
 }
+
+.image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.shine-btn {
+    background: #8E2DE2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    border-radius: 40px;
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    width: 50%;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .shine-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+    transition: 0.5s;
+  }
+  
+  .shine-btn:hover::before {
+    left: 100%;
+  }

@@ -10,21 +10,142 @@
 
 <div class="app">
     <div class="buttons">
-        <button>Inverso</button>
-        <button>Umbral</button>
-        <button>Invumbral</button>
-        <button>Biumbral</button>
-        <button>Invbiumbral</button>
-        <button>Escala gris</button>
-        <button>Invescala gris</button>
-        <button>Extension</button>
+        <button class="shine-btn" id="btnNegativo">Negativo</button>
+        <button class="shine-btn" id="btnUmbral">Umbral</button>
+        <button class="shine-btn" id="btnInvumbral">Invumbral</button>
+        <button class="shine-btn" id="btnBiumbral">Biumbral</button>
+        <button class="shine-btn" id="btnInvbiumbral">Invbiumbral</button>
+        <button class="shine-btn" id="btnEscalaGris">Escala gris</button>
+        <button class="shine-btn" id="btnInvescalaGris">Invescala gris</button>
+        <button class="shine-btn" id="btnExtension">Extension</button>
+        <button class="shine-btn" id="btnNivelGrises">Nivel Grises</button>
     </div>
     <div class="images">
         <div class="image">
-            <img src="" alt="">
+            <img id="imagen" src="{% static 'images/image.jpeg' %}" alt="">
         </div>
-        <input type="file" name="" id="">
+        <!-- <input type="file" name="" id=""> -->
     </div>
 </div>
 
+<script>
+    const imagen = document.getElementById('imagen')
+
+    const btnNegativo = document.getElementById('btnNegativo')
+    const btnUmbral = document.getElementById('btnUmbral')
+    const btnInvumbral = document.getElementById('btnInvumbral')
+    const btnBiumbral = document.getElementById('btnBiumbral')
+    const btnInvbiumbral = document.getElementById('btnInvbiumbral')
+    const btnEscalaGris = document.getElementById('btnEscalaGris')
+    const btnInvescalaGris = document.getElementById('btnInvescalaGris')
+    const btnExtension = document.getElementById('btnExtension')
+    const btnNivelGrises = document.getElementById('btnNivelGrises')
+
+    btnNegativo.addEventListener('click', ev => {
+        console.log('hi')
+        ev.preventDefault()
+        const uri = 'http://localhost:8000/negativo/';
+        const data = fetch(uri, {
+            method: 'GET'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            imagen.setAttribute('src', `data:image/jpeg;base64,${data}`)
+        })
+        .catch(err => err);
+    })
+
+    btnUmbral.addEventListener('click', ev => {
+        console.log('hi')
+        ev.preventDefault()
+        const uri = 'http://localhost:8000/umbral/';
+        const data = fetch(uri, {
+            method: 'GET'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            imagen.setAttribute('src', `data:image/jpeg;base64,${data}`)
+        })
+        .catch(err => err);
+    })
+
+    btnInvumbral.addEventListener('click', ev => {
+        console.log('hi')
+        ev.preventDefault()
+        const uri = 'http://localhost:8000/invumbral/';
+        const data = fetch(uri, {
+            method: 'GET'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            imagen.setAttribute('src', `data:image/jpeg;base64,${data}`)
+        })
+        .catch(err => err);
+    })
+
+    btnEscalaGris.addEventListener('click', ev => {
+        console.log('hi')
+        ev.preventDefault()
+        const uri = 'http://localhost:8000/escala_gris/';
+        const data = fetch(uri, {
+            method: 'GET'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            imagen.setAttribute('src', `data:image/jpeg;base64,${data}`)
+        })
+        .catch(err => err);
+    })
+
+    btnInvescalaGris.addEventListener('click', ev => {
+        console.log('hi')
+        ev.preventDefault()
+        const uri = 'http://localhost:8000/invescala_gris/';
+        const data = fetch(uri, {
+            method: 'GET'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            imagen.setAttribute('src', `data:image/jpeg;base64,${data}`)
+        })
+        .catch(err => err);
+    })
+
+    btnExtension.addEventListener('click', ev => {
+        console.log('hi')
+        ev.preventDefault()
+        const uri = 'http://localhost:8000/extension/';
+        const data = fetch(uri, {
+            method: 'GET'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            imagen.setAttribute('src', `data:image/jpeg;base64,${data}`)
+        })
+        .catch(err => err);
+    })
+
+    btnNivelGrises.addEventListener('click', ev => {
+        console.log('hi')
+        ev.preventDefault()
+        const uri = 'http://localhost:8000/nivelgrises/';
+        const data = fetch(uri, {
+            method: 'GET'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            imagen.setAttribute('src', `data:image/jpeg;base64,${data}`)
+        })
+        .catch(err => err);
+    })
+</script>
+
 {% endblock %}
+
