@@ -1,0 +1,43 @@
+body {
+    background: #202020;
+    color: whitesmoke;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 10px;
+}
+
+.app {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 80vh;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+.images {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.buttons button,
+.images input[type="file"] {
+    padding: 1.2rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    overflow: none;
+}
+
+.image {
+    border: 3px solid green;
+    height: 80%;
+}

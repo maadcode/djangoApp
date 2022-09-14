@@ -1,0 +1,30 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<h1>{{ title }}</h1>
+
+<p>Esta aplicación te permitirá explroar las funciones del módulo Pillow de Python. Sube una imagen y prueba sus funcionalidades.</p>
+
+<div class="app">
+    <div class="buttons">
+        <button>Inverso</button>
+        <button>Umbral</button>
+        <button>Invumbral</button>
+        <button>Biumbral</button>
+        <button>Invbiumbral</button>
+        <button>Escala gris</button>
+        <button>Invescala gris</button>
+        <button>Extension</button>
+    </div>
+    <div class="images">
+        <div class="image">
+            <img src="" alt="">
+        </div>
+        <input type="file" name="" id="">
+    </div>
+</div>
+
+{% endblock %}
